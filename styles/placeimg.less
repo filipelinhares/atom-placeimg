@@ -1,0 +1,52 @@
+// The ui-variables file is provided by base themes provided by Atom.
+//
+// See https://github.com/atom/atom-dark-ui/blob/master/styles/ui-variables.less
+// for a full listing of what's available.
+@import "ui-variables";
+
+.placeimg {
+  padding: 20px;
+}
+
+.placeimg-input {
+  width: 85%;
+  float: left;
+  padding: 6px 12px;
+  border-radius: @component-border-radius;
+  font-size: 16px;
+  border: 1px solid @app-background-color;
+  background: @background-color-selected;
+  margin-bottom: 10px;
+}
+
+.placeimg-copy {
+  float: right;
+  width: 10%;
+  padding: 2px 14px !important; // :(
+}
+
+.placeimg-options {
+  input[type="radio"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  input:checked + .btn {
+    background: @button-background-color-selected;
+    color: @text-color-selected;
+  }
+}
+
+.placeimg-hint {
+  font-size: 12px;
+  text-align: right;
+  color: @text-color-subtle;
+  margin-bottom: 1em;
+}
+
+.placeimg-close {
+  float: right;
+  margin-bottom: 10px;
+}

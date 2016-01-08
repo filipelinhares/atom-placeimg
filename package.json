@@ -1,0 +1,20 @@
+{
+  "name": "atom-placeimg",
+  "main": "./lib/placeimg",
+  "version": "0.0.0",
+  "description": "A short description of your package",
+  "keywords": [],
+  "activationCommands": {
+    "atom-workspace": [
+      "placeimg:toggle"
+    ]
+  },
+  "repository": "https://github.com/filipelinhares/atom-placeimg",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+    "jquery": "^2.0.0"
+  }
+}
