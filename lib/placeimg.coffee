@@ -26,35 +26,39 @@ module.exports = Placeimg =
     placeimgViewState: @placeimgView.serialize()
 
   place: ->
+    $input = $('.placeimg-input')
+    $categories = $('.placeimg-categories')
+    $filters = $('.placeimg-filters')
+    $copyBtn = $('.placeimg-copy')
+    $closeBtn = $('.placeimg-close')
+
     getValue = () ->
       PLACEIMG_URL_MATCH = /^(https:\/\/placeimg.com)\/(\d+)\/(\d+)\/([a-z0-9]+)(?:\/([a-z0-9]+))?\/?$/gim
-      val = $('.placeimg-input').val()
+      val = $input.val()
       query = PLACEIMG_URL_MATCH.exec(val)
       query.shift()
+      query
 
-      return query
-
-    $('.placeimg-categories').on('change', 'input', ->
+    placeMatch = (target, pos) ->
       query = getValue()
-      console.log query
-      query[3] = $(this).val()
-      $('.placeimg-input').val(query.join('/'))
+      query[pos] = $(target).val()
+      $input.val(query.join('/'))
+
+    $categories.on('change', 'input', ->
+      placeMatch(this, 3)
     )
 
-    $('.placeimg-filters').on('change', 'input', ->
-      query = getValue()
-      console.log query
-      query[4] = $(this).val()
-      $('.placeimg-input').val(query.join('/'))
+    $filters.on('change', 'input', ->
+      placeMatch(this, 4)
     )
 
-    $('.placeimg-copy').on('click', ->
-      $('.placeimg-input')[0].select()
+    $copyBtn.on('click', ->
+      $input[0].select()
       document.execCommand('copy')
-      $('.placeimg-input')[0].blur()
+      $input[0].blur()
       )
 
-    $('.placeimg-close').on('click', =>
+    $closeBtn.on('click', =>
       if @modalPanel.isVisible()
         @modalPanel.hide()
     )
