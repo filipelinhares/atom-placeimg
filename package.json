@@ -1,7 +1,7 @@
 {
   "name": "atom-placeimg",
   "main": "./lib/placeimg",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Easily include http://placeimg.com images in your project.",
   "keywords": [],
   "activationCommands": {
