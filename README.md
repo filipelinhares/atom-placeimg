@@ -9,6 +9,11 @@ Easily include [placeimg.com](http://placeimg.com) images in your project.
 apm install atom-placeimg
 ```
 
+## Usages
+- Press <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>i</kbd>
+- Packages > Placeimg > Toggle
+- Right Click > Placeimg Toggle
+
 ## Todo
 - [ ] Use React instead of jQuery in the views
 
